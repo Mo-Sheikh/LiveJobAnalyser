@@ -1,9 +1,14 @@
+import { analyseJob } from "../src/entrypoint/analyseJob";
+
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser");
 const port = 3000;
-
-app.post("/analyseJob", (req: Request, _res: Response) => {
-  console.log(req);
+app.use(bodyParser.text());
+app.post("/analyseJob", (req: any, res: any) => {
+  analyseJob(req.body.data);
+  res.status = 200;
+  res.end();
 });
 app.get("/", (_req: Request, _res: Response) => {
   console.log("I am live");

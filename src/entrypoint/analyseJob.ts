@@ -15,5 +15,3 @@ export const analyseJob = (request: Request): Response => {
   console.log("response =", response);
   return { status: 200 };
 };
-
-analyseJob(process.argv);

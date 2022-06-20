@@ -14,7 +14,7 @@ describe("Analyse Job Use Case", () => {
   let response: "Success" | RepositoryError;
   const fakeRepo = fakeRepository();
   describe("Given we have a valid request", () => {
-    response = analyseJobUseCase(fakeRepo, ["=", "=", "some request"]);
+    response = analyseJobUseCase(fakeRepo, "some request");
     it("should call the repo and write the data", () => {
       expect(fakeRepo.write).toHaveBeenCalledWith("some request");
     });
@@ -28,11 +28,7 @@ describe("Analyse Job Use Case", () => {
       fakeRepo.write.mockReturnValue(
         new RepositoryError(RepositoryErrorStatusCode.WRITE_ERROR)
       );
-      response = analyseJobUseCase(fakeRepo, [
-        "=",
-        "=",
-        "some request",
-      ]) as RepositoryError;
+      response = analyseJobUseCase(fakeRepo, "some request") as RepositoryError;
       expect(response.message).toBe("UNABLE_TO_WRITE_DATA");
       expect(response.name).toBe("Error");
     });

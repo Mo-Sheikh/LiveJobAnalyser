@@ -6,7 +6,7 @@ export function analyseJobUseCase(
   repository: RepositoryPort,
   request: Request
 ): "Success" | RepositoryError {
-  const data = request[2];
+  const data = request;
   const response = repository.write(data);
 
   if (response instanceof RepositoryError) {
