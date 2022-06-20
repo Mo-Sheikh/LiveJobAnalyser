@@ -1,5 +1,6 @@
 export enum RepositoryErrorStatusCode {
-    WRITE_ERROR= "UNABLE_TO_WRITE_DATA"
+    WRITE_ERROR= "UNABLE_TO_WRITE_DATA",
+    READ_ERROR="UNABLE_TO_READ_DATA"
 }
 
 
