@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="7" failures="0" errors="0" time="3.743">
-  <testsuite name="Given we have a connection to the service" errors="0" failures="0" skipped="0" timestamp="2022-06-20T12:53:47" time="3.226" tests="1">
-    <testcase classname="Given we have a connection to the service should return void" name="Given we have a connection to the service should return void" time="0.003">
-    </testcase>
-  </testsuite>
-  <testsuite name="Analyse Job Use Case" errors="0" failures="0" skipped="0" timestamp="2022-06-20T12:53:47" time="3.286" tests="3">
-    <testcase classname="Analyse Job Use Case Given we have a valid request should call the repo and write the data" name="Analyse Job Use Case Given we have a valid request should call the repo and write the data" time="0.015">
+<testsuites name="jest tests" tests="7" failures="0" errors="0" time="3.72">
+  <testsuite name="Analyse Job Use Case" errors="0" failures="0" skipped="0" timestamp="2022-06-20T13:03:47" time="3.088" tests="3">
+    <testcase classname="Analyse Job Use Case Given we have a valid request should call the repo and write the data" name="Analyse Job Use Case Given we have a valid request should call the repo and write the data" time="0.003">
     </testcase>
     <testcase classname="Analyse Job Use Case Given we have a valid request should return success" name="Analyse Job Use Case Given we have a valid request should return success" time="0.001">
     </testcase>
-    <testcase classname="Analyse Job Use Case error handling should return an error when the repo fails" name="Analyse Job Use Case error handling should return an error when the repo fails" time="0.001">
+    <testcase classname="Analyse Job Use Case error handling should return an error when the repo fails" name="Analyse Job Use Case error handling should return an error when the repo fails" time="0">
     </testcase>
   </testsuite>
-  <testsuite name="Given we have a repository" errors="0" failures="0" skipped="0" timestamp="2022-06-20T12:53:47" time="3.306" tests="3">
-    <testcase classname="Given we have a repository And we want to read from the repo should read data from the repository" name="Given we have a repository And we want to read from the repo should read data from the repository" time="0.003">
+  <testsuite name="Given we have a connection to the service" errors="0" failures="0" skipped="0" timestamp="2022-06-20T13:03:47" time="3.299" tests="1">
+    <testcase classname="Given we have a connection to the service should return void" name="Given we have a connection to the service should return void" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="Given we have a repository" errors="0" failures="0" skipped="0" timestamp="2022-06-20T13:03:47" time="3.298" tests="3">
+    <testcase classname="Given we have a repository And we want to read from the repo should read data from the repository" name="Given we have a repository And we want to read from the repo should read data from the repository" time="0.002">
     </testcase>
     <testcase classname="Given we have a repository and we want to write to the repo should write into the repo" name="Given we have a repository and we want to write to the repo should write into the repo" time="0.001">
     </testcase>
-    <testcase classname="Given we have a repository Error Handling Given we have an error when reading from the repo should return a READ_ERROR" name="Given we have a repository Error Handling Given we have an error when reading from the repo should return a READ_ERROR" time="0">
+    <testcase classname="Given we have a repository Error Handling Given we have an error when reading from the repo should return a READ_ERROR" name="Given we have a repository Error Handling Given we have an error when reading from the repo should return a READ_ERROR" time="0.001">
     </testcase>
   </testsuite>
 </testsuites>

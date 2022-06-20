@@ -35,7 +35,7 @@ describe("Given we have a repository", () => {
       await repository.write("test");
       const readData = fs.readFileSync(testPath, "utf-8");
       const parsedData = JSON.parse(readData);
-      expect(parsedData).toStrictEqual({ test: 0 });
+      expect(parsedData).toStrictEqual({ test: 1 });
     });
   });
   describe("Error Handling", () => {

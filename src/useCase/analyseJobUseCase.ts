@@ -8,6 +8,7 @@ export function analyseJobUseCase(
 ): "Success" | RepositoryError {
   const data = request[2];
   const response = repository.write(data);
+
   if (response instanceof RepositoryError) {
     return response;
   }

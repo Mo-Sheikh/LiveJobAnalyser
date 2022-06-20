@@ -32,7 +32,7 @@ export class FileSystemRepository implements RepositoryPort {
     }
 
     for (const word of request.split(" ")) {
-      currentData[word] = currentData[word] ? (currentData[word] += 1) : 0;
+      currentData[word] = currentData[word] ? (currentData[word] += 1) : 1;
     }
 
     fs.writeFileSync(this.path, JSON.stringify(currentData), "utf-8");
