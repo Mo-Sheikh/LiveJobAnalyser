@@ -24,7 +24,7 @@ describe("Given we have a repository", () => {
   });
   describe("and we want to write to the repo", () => {
     beforeAll(() => {
-      fs.writeFileSync(testPath, `{}`, "utf-8");
+      fs.writeFileSync(testPath, `[]`, "utf-8");
       repository = new FileSystemRepository(testPath);
     });
     afterAll(() => {
@@ -32,10 +32,10 @@ describe("Given we have a repository", () => {
     });
 
     it("should write into the repo", async () => {
-      await repository.write("test");
+      await repository.write("javascript");
       const readData = fs.readFileSync(testPath, "utf-8");
       const parsedData = JSON.parse(readData);
-      expect(parsedData).toStrictEqual({ test: 1 });
+      expect(parsedData).toStrictEqual([{ term: "javascript", value: 1 }]);
     });
   });
   describe("Error Handling", () => {
