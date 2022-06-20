@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const port = 3000;
 app.use(bodyParser.text());
 app.post("/analyseJob", (req: any, res: any) => {
-  analyseJob(req.body.data);
+  analyseJob(req.body);
   res.status = 200;
   res.end();
 });
