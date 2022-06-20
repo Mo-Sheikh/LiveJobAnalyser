@@ -1,0 +1,29 @@
+{
+  "name": "LiveJobAnalyser",
+  "version": "1.0.0",
+  "description": "Script that analyses current live jobs and makes a shortlist of the most in-demand skills.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mo-Sheikh/LiveJobAnalyser.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mo-Sheikh/LiveJobAnalyser/issues"
+  },
+  "homepage": "https://github.com/Mo-Sheikh/LiveJobAnalyser#readme",
+  "dependencies": {
+    "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^28.1.2",
+    "jest": "^28.1.1",
+    "ts-jest": "^28.0.5",
+    "ts-node": "^10.8.1"
+  }
+}
