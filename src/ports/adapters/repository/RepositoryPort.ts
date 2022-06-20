@@ -1,8 +1,8 @@
-import {RepositoryError} from "./RepositoryError";
+import { RepositoryError } from "./RepositoryError";
 
-export type RepositorySchema  = Record<string, number>
+export type RepositorySchema = Record<string, number>;
 
-export interface RepositoryPort  {
-    write: (request: string)=> Promise<"Success"| RepositoryError>
-    read: ()=> RepositorySchema| RepositoryError
+export interface RepositoryPort {
+  write: (request: string) => "Success" | RepositoryError;
+  read: () => RepositorySchema | RepositoryError;
 }

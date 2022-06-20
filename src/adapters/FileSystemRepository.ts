@@ -25,12 +25,17 @@ export class FileSystemRepository implements RepositoryPort {
     }
   }
 
-  write(_request: string): Promise<"Success" | RepositoryError> {
-    // const currentData = this.read();
+  write(request: string): "Success" | RepositoryError {
+    const currentData = this.read();
+    if (currentData instanceof RepositoryError) {
+      return currentData;
+    }
 
-    // for (const word of request) {
-    //   currentData[word];
-    // }
-    return Promise.resolve("Success");
+    for (const word of request.split(" ")) {
+      currentData[word] = currentData[word] ? (currentData[word] += 1) : 0;
+    }
+
+    fs.writeFileSync(this.path, JSON.stringify(currentData), "utf-8");
+    return "Success";
   }
 }

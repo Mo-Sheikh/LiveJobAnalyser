@@ -22,18 +22,22 @@ describe("Given we have a repository", () => {
       });
     });
   });
-  // describe("and we want to write to the repo", () => {
-  //   beforeAll(() => {
-  //     fs.writeFileSync(testPath, `{}`, "utf-8");
-  //     repository = new FileSystemRepository(testPath);
-  //   });
-  //
-  //   it("should write into the repo", async () => {
-  //     await repository.write("test");
-  //     const readData = fs.readFileSync(testPath, "utf-8");
-  //     expect(readData).toStrictEqual({ test: 1 });
-  //   });
-  // });
+  describe("and we want to write to the repo", () => {
+    beforeAll(() => {
+      fs.writeFileSync(testPath, `{}`, "utf-8");
+      repository = new FileSystemRepository(testPath);
+    });
+    afterAll(() => {
+      fs.unlinkSync(testPath);
+    });
+
+    it("should write into the repo", async () => {
+      await repository.write("test");
+      const readData = fs.readFileSync(testPath, "utf-8");
+      const parsedData = JSON.parse(readData);
+      expect(parsedData).toStrictEqual({ test: 0 });
+    });
+  });
   describe("Error Handling", () => {
     let repository: RepositoryPort;
     describe("Given we have an error when reading from the repo", () => {
