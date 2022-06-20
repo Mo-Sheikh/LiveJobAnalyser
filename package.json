@@ -18,12 +18,13 @@
   },
   "homepage": "https://github.com/Mo-Sheikh/LiveJobAnalyser#readme",
   "dependencies": {
+    "jest-junit": "^13.2.0",
     "typescript": "^4.7.4"
   },
   "devDependencies": {
-    "@types/jest": "^28.1.2",
-    "jest": "^28.1.1",
-    "ts-jest": "^28.0.5",
+    "@types/jest": "^27.4.1",
+    "jest": "^27.5.1",
+    "ts-jest": "^27.1.3",
     "ts-node": "^10.8.1"
   }
 }
