@@ -22,12 +22,11 @@ describe("Analyse Job Use Case", () => {
   let fakeRepo = fakeRepository();
 
   describe("Given we have a valid request", () => {
-    response = analyseJobUseCase(fakeRepo, "fake request with \n\n");
+    const badRequest = `fake request with () ))\n\n\n`;
+    response = analyseJobUseCase(fakeRepo, badRequest);
 
     it("should sanitise the request", () => {
-      expect(mockedSanitiseRequest).toHaveBeenCalledWith(
-        "fake request with \n\n"
-      );
+      expect(mockedSanitiseRequest).toHaveBeenCalledWith(badRequest);
     });
     it("should call the repo and write the data", () => {
       expect(fakeRepo.write).toHaveBeenCalledWith("sanitised string");
