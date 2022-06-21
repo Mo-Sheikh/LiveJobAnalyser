@@ -8,6 +8,7 @@ import {
   RepositoryErrorStatusCode,
 } from "../ports/adapters/repository/RepositoryError";
 import * as fs from "fs";
+import { wantedWords } from "../../wantedWords";
 
 export class FileSystemRepository implements RepositoryPort {
   path: string;
@@ -34,18 +35,20 @@ export class FileSystemRepository implements RepositoryPort {
     const words = new Set(request.split(" ").map((i) => i.toLowerCase()));
     let state = false;
     for (const word of words) {
-      for (let i = 0; i < currentData.length; i++) {
-        const item = currentData[i];
-        if (item.term.toLowerCase() === word.toLowerCase()) {
-          currentData[i].value += 1;
-          state = true;
+      if (wantedWords.includes(word.toLowerCase())) {
+        for (let i = 0; i < currentData.length; i++) {
+          const item = currentData[i];
+          if (item.term.toLowerCase() === word.toLowerCase()) {
+            currentData[i].value += 1;
+            state = true;
+          }
         }
-      }
-      if (!state) {
-        currentData.push({
-          term: word.toLowerCase(),
-          value: 1,
-        });
+        if (!state) {
+          currentData.push({
+            term: word.toLowerCase(),
+            value: 1,
+          });
+        }
       }
     }
 
