@@ -10,8 +10,11 @@ app.post("/analyseJob", (req: any, res: any) => {
   res.status = 200;
   res.end();
 });
-app.get("/", (_req: Request, _res: Response) => {
+app.get("/", (_req: Request, res: any) => {
   console.log("I am live");
+  res.status = 200;
+  res.send("Ok");
+  res.end();
 });
 app.listen(port, () => {
   console.log("Server live");
